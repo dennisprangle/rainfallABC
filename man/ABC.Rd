@@ -19,11 +19,11 @@ ABC(nsims, prior_function, sim_function, sumstat_functions, obs_data,
 
 \item{obs_data}{Observed model data object.}
 
-\item{dist}{What distance function to use. Currently choose either \code{"weightedEuclidean"} or \code{"rank"}.}
+\item{dist}{What distance function to use. Currently choose either "weightedEuclidean" or "rank".}
 
 \item{nacc}{How many simulations to accept.}
 
-\item{output}{Specify what output to return. Currently choose either \code{"accepted"} or \code{"all"}.}
+\item{output}{Specify what output to return. Currently choose either "accepted" or "all".}
 
 \item{nCores}{Number of parallel cores to use.}
 }

@@ -14,7 +14,7 @@ rejABC(stats, obs, subset = 1:ncol(stats), dist = "weightedEuclidean",
 
 \item{subset}{A numeric vector specifying which summaries should be used.}
 
-\item{dist}{What distance function to use. Currently choose either \code{"weightedEuclidean"} or \code{"rank"}.}
+\item{dist}{What distance function to use. Currently choose either "weightedEuclidean" or "rank".}
 
 \item{nacc}{How many simulations to accept.}
 

@@ -33,7 +33,7 @@ simABC = function(nsims, prior_function, sim_function, sumstat_functions, nCores
 #'
 #' @param stats A vector of simulated summary statistics.
 #' @param obs The observed summary statistic.
-#' @param dist What distance function to use. Currently choose either \code{"weightedEuclidean"} or \code{"rank"}.
+#' @param dist What distance function to use. Currently choose either "weightedEuclidean" or "rank".
 #' @param nacc How many simulations to accept.
 #'
 #' @return A vector specifying which elements of \code{stats} were accepted.
@@ -57,7 +57,7 @@ rejABC_1stat = function(stats, obs, dist="weightedEuclidean", nacc=200) {
 #' @param stats A matrix of simulated summary statistics.
 #' @param obs A vector of observed summary statistics.
 #' @param subset A numeric vector specifying which summaries should be used.
-#' @param dist What distance function to use. Currently choose either \code{"weightedEuclidean"} or \code{"rank"}.
+#' @param dist What distance function to use. Currently choose either "weightedEuclidean" or "rank".
 #' @param nacc How many simulations to accept.
 #' @param nCores Number of parallel cores to use.
 #'
@@ -98,9 +98,9 @@ rejABC = function(stats, obs, subset=1:ncol(stats), dist="weightedEuclidean", na
 #' @param sim_function A function taking a vector of parameters as an argument and returning a model data object.
 #' @param sumstat_functions A list of functions. Each should take a model data object as argument and return a summary statistic (or a vector, see later), which ideally is named. Sometimes it is convenient to use the same calculations for several summaries. In this case a function can return a vector of summaries. Again these should ideally be named.
 #' @param obs_data Observed model data object.
-#' @param dist What distance function to use. Currently choose either \code{"weightedEuclidean"} or \code{"rank"}.
+#' @param dist What distance function to use. Currently choose either "weightedEuclidean" or "rank".
 #' @param nacc How many simulations to accept.
-#' @param output Specify what output to return. Currently choose either \code{"accepted"} or \code{"all"}.
+#' @param output Specify what output to return. Currently choose either "accepted" or "all".
 #' @param nCores Number of parallel cores to use.
 #'
 #' @return A data frame containing parameters and summaries. If \code{output=="accepted"} then only the accepted simulations are returned. Otherwise all simulations are returns and an \code{output=="accepted"} column shows if they were accepted.

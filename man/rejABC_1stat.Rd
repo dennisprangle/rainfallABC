@@ -11,7 +11,7 @@ rejABC_1stat(stats, obs, dist = "weightedEuclidean", nacc = 200)
 
 \item{obs}{The observed summary statistic.}
 
-\item{dist}{What distance function to use. Currently choose either \code{"weightedEuclidean"} or \code{"rank"}.}
+\item{dist}{What distance function to use. Currently choose either "weightedEuclidean" or "rank".}
 
 \item{nacc}{How many simulations to accept.}
 }
