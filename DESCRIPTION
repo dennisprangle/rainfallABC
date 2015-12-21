@@ -1,0 +1,14 @@
+Package: rainfallABC
+Type: Package
+Title: ABC analysis of rainfall data
+Version: 0.0
+Date: 2015-12-17
+Author: Dennis Prangle and Sarah Heaps
+Maintainer: Dennis Prangle <dennis.prangle@gmail.com>
+Description: Performs ABC analysis of rainfall data.
+License: MIT + file LICENSE
+Imports:
+    magrittr,
+    parallel,
+    plyr
+RoxygenNote: 5.0.1
