@@ -1,0 +1,28 @@
+library(rainfallABC)
+
+##A simple ABC test with 2 parameters and summary statistics
+
+rprior = function() {
+    c(mu = rnorm(1), sigma = exp(1))
+}
+
+rdata = function(pars) {
+    rnorm(100, pars[1], pars[2])
+}
+
+sum_functions = list(function(x) c(mean=mean(x)), function(x) c(sd=sd(x)))
+
+xobs = rnorm(100, 2, 2)
+
+sims = rainfallABC:::simABC(1000, rprior, rdata, sum_functions)
+
+test_that("sims is matrix of correct dimension", {
+         expect_true(is.matrix(sims))
+         expect_equal(dim(sims), c(1000, 4))
+     })
+print("!")
+
+
+##abcout = ABC(1000, rprior, rdata, sum_functions, xobs)
+
+##testthat(abcout
