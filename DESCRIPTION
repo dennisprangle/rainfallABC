@@ -12,5 +12,6 @@ Imports:
     parallel,
     plyr
 Suggests:
+    ismev,
     testthat
 RoxygenNote: 5.0.1
