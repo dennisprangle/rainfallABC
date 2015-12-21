@@ -4,7 +4,7 @@
 library(ismev)
 data(rain)
 doSim = function(pars) {
-    rainfallABC::simulation_Bartlett_Lewis(pars[1], pars[2], pars[3], 17531, 1) ##TO DO: dehardcode dur=17531
+    rainfallABC::sim_simple_data(pars[1], pars[2], pars[3], 17531, 1) ##TO DO: dehardcode dur=17531
 }
 rprior = function() {
     c(lambda = runif(1, 0, 2),
