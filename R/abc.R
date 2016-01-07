@@ -117,7 +117,7 @@ rejABC = function(stats, obs, subset=1:ncol(stats), dist="weightedEuclidean", na
 #'       mu_x = runif(1, 0, 50),
 #'       eta = runif(1, 0, 10))
 #' }
-#' abcout = ABC(200, rprior, doSim, list(mean_overall, prop_dry, cor_overall, max_rain), rain)
+#' abcout = ABC(200, rprior, doSim, list(mean_overall, prop_dry, cor_overall, max_rain), rain, nacc=50)
 #' par(mfrow=c(1,3))
 #' for (i in 1:3) {
 #'     pname = names(abcout)[i]
