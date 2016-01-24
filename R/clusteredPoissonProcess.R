@@ -47,7 +47,7 @@ simulate_raincells = function(duration, beta, mu_x, eta,
 ## Args: see args list for create_storm
 simulate_raincells_neymann_scott = function(num_cells, beta, mu_x,
                               eta, cell_at_start=TRUE) {
-  # Here we don't assume there is a rain cell immediately at 
+  # Here we assume there is a rain cell immediately at 
   # the start of each storm
   if(cell_at_start) arrival = c(0, sort(rexp(num_cells, 
                                 beta))) 

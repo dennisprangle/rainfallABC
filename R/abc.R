@@ -102,6 +102,7 @@ rejABC = function(stats, obs, subset=1:ncol(stats), dist="weightedEuclidean", na
 #' @param nacc How many simulations to accept.
 #' @param output Specify what output to return. Currently choose either "accepted" or "all".
 #' @param nCores Number of parallel cores to use.
+#' @param cutoff If cutoff>0, rain day in real data defined as day where rain>=cutoff, otherwise rain day in real data defined as day where rain>0.
 #'
 #' @return A data frame containing parameters and summaries. If \code{output=="accepted"} then only the accepted simulations are returned. Otherwise all simulations are returns and an \code{output=="accepted"} column shows if they were accepted.
 #'
@@ -126,8 +127,8 @@ rejABC = function(stats, obs, subset=1:ncol(stats), dist="weightedEuclidean", na
 #' 
 #' @export
 #' @importFrom magrittr "%>%"
-ABC = function(nsims, prior_function, sim_function, sumstat_functions, obs_data, dist="weightedEuclidean", nacc=200, output="accepted", nCores=parallel::detectCores()) {
-    obs_stats= lapply(sumstat_functions, function(f) do.call(f, list(obs_data))) %>% unlist
+ABC = function(nsims, prior_function, sim_function, sumstat_functions, obs_data, dist="weightedEuclidean", nacc=200, output="accepted", nCores=parallel::detectCores(), cutoff=0) {
+    obs_stats= lapply(sumstat_functions, function(f) do.call(f, list(obs_data, cutoff=cutoff))) %>% unlist
     sims = simABC(nsims, prior_function, sim_function, sumstat_functions, nCores)
     npars = ncol(sims) - length(obs_stats)
     stats = sims[, -(1:npars), drop=FALSE]

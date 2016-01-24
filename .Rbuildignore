@@ -2,3 +2,5 @@ LICENSE.md
 README.md
 .gitignore
 *.ipynb
+^.*\.Rproj$
+^\.Rproj\.user$
