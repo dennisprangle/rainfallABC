@@ -1,6 +1,6 @@
 LICENSE.md
 README.md
 .gitignore
-*.ipynb
+.*.ipynb
 ^.*\.Rproj$
 ^\.Rproj\.user$
