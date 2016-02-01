@@ -4,7 +4,7 @@
 \alias{max_rain}
 \title{Maximum rainfall}
 \usage{
-max_rain(x)
+max_rain(x, ...)
 }
 \arguments{
 \item{x}{Numeric vector of rainfall totals}

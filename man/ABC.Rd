@@ -6,7 +6,7 @@
 \usage{
 ABC(nsims, prior_function, sim_function, sumstat_functions, obs_data,
   dist = "weightedEuclidean", nacc = 200, output = "accepted",
-  nCores = parallel::detectCores())
+  nCores = parallel::detectCores(), cutoff = 0)
 }
 \arguments{
 \item{nsims}{How many simulations to perform.}
@@ -26,6 +26,8 @@ ABC(nsims, prior_function, sim_function, sumstat_functions, obs_data,
 \item{output}{Specify what output to return. Currently choose either "accepted" or "all".}
 
 \item{nCores}{Number of parallel cores to use.}
+
+\item{cutoff}{If cutoff>0, rain day in real data defined as day where rain>=cutoff, otherwise rain day in real data defined as day where rain>0.}
 }
 \value{
 A data frame containing parameters and summaries. If \code{output=="accepted"} then only the accepted simulations are returned. Otherwise all simulations are returns and an \code{output=="accepted"} column shows if they were accepted.
@@ -45,7 +47,7 @@ rprior = function() {
       mu_x = runif(1, 0, 50),
       eta = runif(1, 0, 10))
 }
-abcout = ABC(200, rprior, doSim, list(mean_overall, prop_dry, cor_overall, max_rain), rain)
+abcout = ABC(200, rprior, doSim, list(mean_overall, prop_dry, cor_overall, max_rain), rain, nacc=50)
 par(mfrow=c(1,3))
 for (i in 1:3) {
     pname = names(abcout)[i]

@@ -4,13 +4,15 @@
 \alias{prop_dry}
 \title{Proportion of dry days}
 \usage{
-prop_dry(x)
+prop_dry(x, cutoff = 0)
 }
 \arguments{
 \item{x}{Numeric vector of rainfall totals}
+
+\item{cutoff}{If cutoff>0, dry day defined as day where rain<cutoff, otherwise dry day defined as day where rain=0}
 }
 \value{
-Proportion of days with zero rainfall
+Proportion of dry days
 }
 \description{
 Proportion of dry days

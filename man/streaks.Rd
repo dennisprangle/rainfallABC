@@ -4,10 +4,12 @@
 \alias{streaks}
 \title{Summaries related to streaks of consecutive rainy days}
 \usage{
-streaks(x)
+streaks(x, cutoff = 0)
 }
 \arguments{
 \item{x}{Numeric vector of rainfall totals}
+
+\item{cutoff}{If cutoff>0, rain day defined as day where rain>=cutoff, otherwise rain day defined as day where rain>0}
 }
 \value{
 A vector of \code{mean_dur}, mean streak duration; \code{sd_dur}, standard deviation of streak durations; \code{mean_start_gap}, mean times between start times.

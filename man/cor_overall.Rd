@@ -4,7 +4,7 @@
 \alias{cor_overall}
 \title{Rainfall autocorrelation}
 \usage{
-cor_overall(x)
+cor_overall(x, ...)
 }
 \arguments{
 \item{x}{Numeric vector of rainfall totals}

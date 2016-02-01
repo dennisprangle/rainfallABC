@@ -4,7 +4,7 @@
 \alias{var_overall}
 \title{Overall rainfall variance}
 \usage{
-var_overall(x)
+var_overall(x, ...)
 }
 \arguments{
 \item{x}{Numeric vector of rainfall totals}

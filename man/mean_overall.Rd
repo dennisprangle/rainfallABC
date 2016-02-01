@@ -4,7 +4,7 @@
 \alias{mean_overall}
 \title{Overall mean rainfall}
 \usage{
-mean_overall(x)
+mean_overall(x, ...)
 }
 \arguments{
 \item{x}{Numeric vector of rainfall totals}
