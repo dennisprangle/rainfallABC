@@ -19,6 +19,9 @@ test_that("simABC run and outputs matrix of correct dimension", {
     expect_equal(dim(sims), c(1000, 4))
 })
 
+##Create sims instead so it's in the global environment
+sims = rainfallABC:::simABC(1000, rprior, rdata, sum_functions)
+
 ##rejABC_1stat
 test_that("rejABC_1stat runs and outputs vector", {
     abcout1 = rainfallABC:::rejABC_1stat(sims[,"mean"], xobs[1], nacc=100)
@@ -34,9 +37,9 @@ test_that("rejABC runs and outputs vector", {
     abcout3 = rainfallABC:::rejABC(sims[,3:4], xobs[3:4], nacc=100)
     abcout4 = rainfallABC:::rejABC(sims[,3:4], xobs[3:4], dist="rank", nacc=100)
     expect_true(is.vector(abcout3))
-    expect_true(length(abcout1) == 100)
+    expect_true(length(abcout3) == 100)
     expect_true(is.vector(abcout4))
-    expect_true(length(abcout2) == 100)
+    expect_true(length(abcout4) == 100)
 })
 
 ##ABC
